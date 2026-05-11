@@ -26,7 +26,7 @@ export default function LoginPage() {
       <div className="bg-white rounded-[10px] border border-black/[0.09] shadow-sm p-8 w-full max-w-sm">
         {/* Brand */}
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 bg-[#639922] rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
             <i className="ti ti-pig-money text-white text-xl" aria-hidden="true" />
           </div>
           <div>

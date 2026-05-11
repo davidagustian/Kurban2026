@@ -4,7 +4,6 @@ import { useState } from "react";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import { kelasList } from "@/data/dummyData";
 import { useLaporan } from "@/hooks/useTabungan";
 
 const fmt = (n) => "Rp " + n.toLocaleString("id-ID");
@@ -33,8 +32,14 @@ export default function Laporan({ tahunAjaranId }) {
       <Card className="p-5">
         <p className="text-sm font-semibold text-[#1a1a18] mb-4">Filter Laporan</p>
         <div className="flex flex-wrap gap-3 items-end">
+          <div className="flex flex-col gap-1">
+            <label className="text-[11.5px] font-medium text-[#5F5E5A]">Kelas</label>
+            <select value={filterKelas} onChange={(e) => setFilterKelas(e.target.value)}
+              className="px-3 py-2 text-[13px] rounded-md border border-black/[0.09] bg-white text-[#1a1a18] outline-none focus:border-[#639922]">
+              <option value="">Semua Kelas</option>
+            </select>
+          </div>
           {[
-            { label: "Kelas", val: filterKelas, set: setFilterKelas, opts: kelasList, ph: "Semua Kelas" },
             { label: "Kategori", val: filterKat, set: setFilterKat, opts: ["Tabungan Kurban", "Belajar Kurban"], ph: "Semua Kategori" },
             { label: "Status", val: filterStatus, set: setFilterStatus, opts: ["Tercapai", "Belum"], ph: "Semua Status" },
           ].map((f) => (
