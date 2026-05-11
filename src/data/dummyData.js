@@ -67,4 +67,15 @@ export const arsipData = [
   { id: 6, tahun: "2019/2020", total: "Rp 16.400.000", peserta: 105, status: "Selesai" },
 ];
 
-export const kelasList = ["Kelas I", "Kelas II", "Kelas III", "Kelas IV", "Kelas V", "Kelas VI"];
+export const JENJANG = [
+  { label: "TK",  kelas: ["TK MUHAJIRIN", "TK ANSHOR 1", "TK ANSHOR 2", "TK ANSHOR 3"] },
+  { label: "SD",  kelas: ["Kelas 1A", "Kelas 1B", "Kelas 1C", "Kelas 1Q", "Kelas 2A", "Kelas 2B", "Kelas 2QA", "Kelas 2QB",
+     "Kelas 3A", "Kelas 3B", "Kelas 3Q", "Kelas 4A", "Kelas 4B", "Kelas 4Q", "Kelas 5A", "Kelas 5B", "Kelas5Q", 
+     "Kelas 6A", "Kelas 6B", "Kelas 6Q"] },
+  { label: "SMP", kelas: ["Kelas 7 IBNU KATSIR", "Kelas 7 IBNU HAJAR", "Kelas 8 IBNU RUSYD", "Kelas 8 IBNU KHALDUN",
+     "Kelas 9 IBNU ABBAS", "Kelas 9 IBNU BATUTA"] },
+  { label: "SMA", kelas: ["Kelas 10", "Kelas 11", "Kelas 12"] },
+];
+
+// Helper flat list (untuk select & filter)
+export const kelasList = JENJANG.flatMap((j) => j.kelas);

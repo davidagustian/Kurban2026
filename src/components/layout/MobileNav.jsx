@@ -16,7 +16,7 @@ export default function MobileNav({ activePage, onNavigate }) {
             key={item.page}
             onClick={() => onNavigate(item.page)}
             className={`flex flex-col items-center gap-0.5 px-3 py-1 text-[10px] font-medium transition-colors duration-150
-              ${activePage === item.page ? "text-[#3B6D11]" : "text-[#888780]"}`}
+              ${activePage === item.page ? "text-indigo-600" : "text-slate-400"}`}
           >
             <i className={`ti ${item.icon} text-[22px]`} aria-hidden="true" />
             {item.label}

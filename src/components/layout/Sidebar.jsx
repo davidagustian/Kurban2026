@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const navItems = [
   { page: "dashboard", icon: "ti-layout-dashboard", label: "Dashboard" },
   { page: "input", icon: "ti-circle-plus", label: "Input Tabungan" },
@@ -12,8 +14,8 @@ export default function Sidebar({ activePage, onNavigate }) {
     <aside className="w-[220px] bg-white border-r border-black/[0.09] flex flex-col py-5 flex-shrink-0 hidden md:flex">
       {/* Brand */}
       <div className="px-5 pb-6 border-b border-black/[0.09] mb-2">
-        <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center mb-2.5">
-          <i className="ti ti-pig-money text-white text-xl" aria-hidden="true" />
+        <div className="w-9 h-9 rounded-lg overflow-hidden">
+        <Image src="public/assets/logo-kurban.svg" alt="Logo" width={36} height={36} />
         </div>
         <div className="text-[13px] font-semibold text-[#1a1a18] leading-tight">Kurban Savings</div>
         <div className="text-[11px] text-[#5F5E5A]">Manager</div>

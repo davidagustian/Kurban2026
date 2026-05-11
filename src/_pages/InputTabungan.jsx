@@ -5,7 +5,6 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
-import { kelasList } from "@/data/dummyData";
 import { findOrCreateSiswa, insertTabungan } from "@/lib/api";
 
 const initialForm = { nama: "", kelas: "", jumlah: "", tanggal: new Date().toISOString().split("T")[0], catatan: "" };
@@ -77,9 +76,19 @@ export default function InputTabungan({ tahunAjaranId }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Input id="f-nama" label="Nama Siswa" placeholder="Masukkan nama siswa"
           value={form.nama} onChange={set("nama")} error={errors.nama} />
-        <Select id="f-kelas" label="Kelas" placeholder="Pilih kelas"
-          value={form.kelas} onChange={set("kelas")} options={kelasList} error={errors.kelas} />
-
+        <div className="flex flex-col gap-1.5">
+  <label className="text-[12.5px] font-semibold text-slate-600 uppercase tracking-wide">Kelas</label>
+  <select id="f-kelas" value={form.kelas} onChange={set("kelas")}
+    className="px-3 py-2.5 text-sm rounded-lg border border-slate-200 bg-white outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100">
+    <option value="">Pilih kelas</option>
+    {JENJANG.map((j) => (
+      <optgroup key={j.label} label={j.label}>
+        {j.kelas.map((k) => <option key={k} value={k}>{k}</option>)}
+      </optgroup>
+    ))}
+  </select>
+  {errors.kelas && <p className="text-[11px] text-red-500">{errors.kelas}</p>}
+</div>
         <div className="sm:col-span-2 flex flex-col gap-1.5">
           <label className="text-[12.5px] font-medium text-[#1a1a18]">Kategori</label>
           <div className="flex gap-2.5">

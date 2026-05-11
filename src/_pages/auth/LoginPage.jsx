@@ -26,8 +26,8 @@ export default function LoginPage() {
       <div className="bg-white rounded-[10px] border border-black/[0.09] shadow-sm p-8 w-full max-w-sm">
         {/* Brand */}
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
-            <i className="ti ti-pig-money text-white text-xl" aria-hidden="true" />
+          <div className="w-9 h-9 rounded-lg overflow-hidden">
+          <Image src="public/assets/logo-kurban.svg" alt="Logo" width={36} height={36} />
           </div>
           <div>
             <p className="text-sm font-bold text-[#1a1a18] leading-tight">Kurban Savings</p>

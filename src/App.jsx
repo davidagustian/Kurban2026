@@ -52,7 +52,7 @@ function AppShell() {
               <select
                 value={tahunAjaran?.id ?? ""}
                 onChange={(e) => setActive(list.find((t) => t.id === e.target.value))}
-                className="text-xs px-2.5 py-1.5 rounded-md border border-black/[0.09] bg-[#EAF3DE] text-[#3B6D11] font-semibold outline-none cursor-pointer"
+                className="text-xs px-2.5 py-1.5 rounded-md border border-black/[0.09] bg-amber-50 text-amber-700 font-semibold outline-none cursor-pointer"
               >
                 {list.map((t) => (
                   <option key={t.id} value={t.id}>{t.tahun}</option>
@@ -63,7 +63,7 @@ function AppShell() {
             <button
               onClick={signOut}
               title="Keluar"
-              className="w-8 h-8 rounded-full bg-[#639922] flex items-center justify-center text-white hover:bg-[#3B6D11] transition-colors"
+              className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white hover:bg-indigo-800 transition-colors"
             >
               <i className="ti ti-logout text-sm" />
             </button>
